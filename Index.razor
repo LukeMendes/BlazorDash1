@@ -1,0 +1,51 @@
+﻿@page "/"
+
+<PageTitle>Index</PageTitle>
+
+<MudProgressLinear Color="Color.Primary" Value="@Value1" Class="my-7" />
+<MudProgressLinear Color="Color.Secondary" Value="@Value2" Class="my-7" />
+<MudButton OnClick="ButtonValue1" Variant="Variant.Filled" Color="Color.Primary">Primary</MudButton>
+<MudButton OnClick="ButtonValue2" Variant="Variant.Filled" Color="Color.Secondary">Secondary</MudButton>
+<MudButton OnClick="ButtonValue3" Variant="Variant.Filled" Disabled="Value1==0 || Value2<=5" Color="Color.Default">Abziehen</MudButton>
+
+@code {
+	public int Value1 { get; set; }
+	public int Value2 { get; set; }
+
+	void ButtonValue1() {
+		Value1 += 10;
+	}
+	void ButtonValue2() {
+		Value2 += 5;
+	}
+	void ButtonValue3() {
+		Value1 -= 10;
+		Value2 -= 10;
+	}
+
+
+
+	/*public async void SimulateProgress()
+	{
+		Value = 0;
+		do
+		{
+			if (_disposed)
+			{
+				return;
+			}
+
+			Value += 4;
+			StateHasChanged();
+			await Task.Delay(500);
+
+		} while (Value < 100);
+
+		SimulateProgress();
+	}
+
+	protected override void OnInitialized() => SimulateProgress();
+
+	bool _disposed;
+	public void Dispose() => _disposed = true;*/
+}

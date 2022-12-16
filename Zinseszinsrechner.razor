@@ -1,0 +1,18 @@
+﻿@page "/zinseszinsrechner"
+
+<MudSlider @bind-Value="kapital" Min="1000" Max="1000000" @onchange="() => Berechnen()" Step="1000" Color="Color.Info">Kapital: @kapital.ToString("0,0.00") €</MudSlider>
+<MudSlider @bind-Value="zinssatz" Min="-5.00" Max="10.00" @onchange="() => Berechnen()" Step="0.05" Color="Color.Error">Zinssatz: @zinssatz.ToString("F2") %</MudSlider>
+<MudSlider @bind-Value="jahre" Min="1" Max="50" @onchange="() => Berechnen()" Step="1" Color="Color.Warning">Anlagezeitraum: @jahre.ToString() Jahre</MudSlider>
+
+@code {
+    public double kapital { get; set; }
+    public double zinssatz { get; set; }
+    public int jahre { get; set; }
+
+    public double Berechnen()
+    {
+        /*hier findet die Berechnung statt*/
+        jahre++;
+        return 1.0;
+    }
+}
