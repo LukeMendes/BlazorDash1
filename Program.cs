@@ -1,4 +1,4 @@
-using BlazorDash1;
+using Blazor_Dash;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using MudBlazor.Services;
